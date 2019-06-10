@@ -9,7 +9,8 @@ const defaultFields: FieldDefinitions = [
     id: "1",
     name: "name",
     type: "text",
-    label: "Test"
+    label: "Test",
+    required: true
   },
   {
     id: "2",

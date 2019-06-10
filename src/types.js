@@ -14,16 +14,23 @@ export type FieldDefinition = {|
   id: string,
   name: string,
   label: string,
+  missingRequiredValueMessage?: string,
   options?: FieldOptions,
+  required?: boolean,
   type: string,
-  value?: FieldValue
+  value?: FieldValue,
+  visible?: boolean
 |};
 export type FieldDefinitions = FieldDefinition[];
 
 // Field extends FieldDefinition to be used at runtime as it defines attributes that a developer shouldn't provide (like pendingOptions)
 export type Field = {|
   ...FieldDefinition,
-  pendingOptions?: Promise<FieldOptions>
+  hasBeenTouched: boolean,
+  isValid: boolean,
+  isDiscretelyInvalid: boolean,
+  pendingOptions?: Promise<FieldOptions>,
+  validationErrorMessage: string
 |};
 
 export type Fields = Field[];
