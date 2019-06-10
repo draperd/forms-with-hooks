@@ -76,6 +76,10 @@ export type CreateFormContext = ({
   renderer?: FieldRenderer
 }) => FormContextType;
 
+export type FormFragmentProps = {
+  defaultFields?: FieldDefinitions
+};
+
 export type FormProps = {
   children?: any,
   inheritedFormContext?: FormContextType,
